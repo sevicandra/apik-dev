@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TblLotLelangController;
+use App\Http\Controllers\TblTransaksiBniController;
+use App\Http\Controllers\TblTransaksiBriController;
+use App\Http\Controllers\TblTransaksiMandiriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +18,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout.main',[
+        'pagetitle'=> 'Beranda'
+    ]);
 });
+
+Route::get('/lot-lelang', [TblLotLelangController::class, 'index']);
+
+Route::get('/transaksi-bri', [TblTransaksiBriController::class, 'index']);
+
+Route::get('/transaksi-bni', [TblTransaksiBniController::class, 'index']);
+
+Route::get('/transaksi-mandiri', [TblTransaksiMandiriController::class, 'index']);
+
+
