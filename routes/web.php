@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GfxBniController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TblLotLelangController;
 use App\Http\Controllers\TblTransaksiBniController;
@@ -30,5 +31,10 @@ Route::get('/transaksi-bri', [TblTransaksiBriController::class, 'index']);
 Route::get('/transaksi-bni', [TblTransaksiBniController::class, 'index']);
 
 Route::get('/transaksi-mandiri', [TblTransaksiMandiriController::class, 'index']);
+
+Route::controller(GfxBniController::class)->group(function(){
+    Route::get('gfx-bni', 'index');
+    Route::post('gfx-bni', 'reader');
+});
 
 

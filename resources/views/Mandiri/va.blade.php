@@ -44,3 +44,7 @@
 
 
 @endsection
+
+@section('pagination')
+{{ $data->links() }}
+@endsection

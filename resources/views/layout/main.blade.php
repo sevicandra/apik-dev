@@ -46,6 +46,11 @@
                                     Lot Lelang
                                 </a>
                             </li>
+                            <li class="nav-item m-0 p-0">
+                                <a class="nav-link active pb-1" href="/gfx-bni">
+                                    GFX BNI
+                                </a>
+                            </li>
                         </ul>
                         <a href="" class="btn btn-sm btn-outline-primary mt-3 ml-4">Keluar Aplikasi</a>
                     </div>
@@ -60,7 +65,9 @@
                         </div>
                     </div>
                     <div class="row d-flex justify-content-center align-items-center pt-3 pb-2 mb-3 border-top">
-                        {{ $data->links() }}
+                        @section('pagination')
+                            
+                        @show
                     </div>
                 </main>
             </div>

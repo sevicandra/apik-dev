@@ -54,3 +54,7 @@
         </tbody>
     </table>
 @endsection
+
+@section('pagination')
+{{ $data->links() }}
+@endsection
