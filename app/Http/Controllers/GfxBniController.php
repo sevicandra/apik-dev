@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\gfx;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -11,8 +12,10 @@ class GfxBniController extends Controller
 {
     public function index()
     {
-        return view('gfx-bni.index',[
-            'pagetitle'=> 'GFX BNI'
+
+        return view('gfx-bni.reader',[
+            'pagetitle'=> 'GFX BNI',
+            'data'=>gfx::all()
         ]);
     }
 

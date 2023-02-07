@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\tbl_lot_lelang;
-use Illuminate\Http\Request;
+use App\Http\Api\LotLelang;
 
 class TblLotLelangController extends Controller
 {
@@ -11,7 +10,14 @@ class TblLotLelangController extends Controller
     {
         return view('lot-lelang.index',[
             'pagetitle'=>'Lot Lelang',
-            'data'=>tbl_lot_lelang::paginate(10)->withQueryString(),
+            'data'=>LotLelang::get()->data
+        ]);
+    }
+
+    public function detail($id){
+        return view('lot-lelang.detail',[
+            'pagetitle'=>'Detail Lelang',
+            'data'=>LotLelang::getdetail($id)
         ]);
     }
 }

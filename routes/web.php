@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\GfxBniController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\GfxBniController;
 use App\Http\Controllers\TblLotLelangController;
 use App\Http\Controllers\TblTransaksiBniController;
 use App\Http\Controllers\TblTransaksiBriController;
@@ -25,6 +26,7 @@ Route::get('/', function () {
 });
 
 Route::get('/lot-lelang', [TblLotLelangController::class, 'index']);
+Route::get('/lot-lelang/{id}', [TblLotLelangController::class, 'detail']);
 
 Route::get('/transaksi-bri', [TblTransaksiBriController::class, 'index']);
 
@@ -34,7 +36,10 @@ Route::get('/transaksi-mandiri', [TblTransaksiMandiriController::class, 'index']
 
 Route::controller(GfxBniController::class)->group(function(){
     Route::get('gfx-bni', 'index');
-    Route::post('gfx-bni', 'reader');
+    // Route::post('gfx-bni', 'reader');
 });
 
+Route::get('/test', function(){
+    
+});
 

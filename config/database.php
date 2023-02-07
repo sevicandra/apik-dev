@@ -172,6 +172,26 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
+
+        'mysql_db_lelang' => [
+            'driver' => 'mysql',
+            'url' => env('DATABASE_URL_DB_LELANG'),
+            'host' => env('DB_HOST_DB_LELANG', '127.0.0.1'),
+            'port' => env('DB_PORT_DB_LELANG', '3306'),
+            'database' => env('DB_DATABASE_DB_LELANG', 'forge'),
+            'username' => env('DB_USERNAME_DB_LELANG', 'forge'),
+            'password' => env('DB_PASSWORD_DB_LELANG', ''),
+            'unix_socket' => env('DB_SOCKET_DB_LELANG', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
     ],
 
     /*
